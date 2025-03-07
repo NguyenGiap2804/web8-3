@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8/3 - Lời Chúc Dành Cho Bé</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Thêm hai GIF ở hai bên -->
+    <img src="Gifvsimg/f846bd9b4e24d10c5415262af6fc8ef4.gif" alt="GIF Left" id="left-gif" class="side-gif">
+    <img src="Gifvsimg/1550dedd078d0ae32e357ae926c0afe7.gif" alt="GIF Right" id="right-gif" class="side-gif">
+
+    <div id="page1" class="page active">
+        <img src="Gifvsimg/c92b9543e8a8d75b28cde087c887cbef.gif" alt="Hello Kitty" id="kitty">
+        <p id="message">Chúc bé 8/3 thật vui vẻ nha!</p>
+        <button id="next-btn">Next Message</button>
+    </div>
+
+    <div id="page2" class="page">
+        <img src="Gifvsimg/icegif-1430.gif" alt="Hello Kitty with Flowers" id="kitty-final">
+        <h1>Em có yêu anh không?</h1>
+        <button id="yes-btn">Có</button>
+        <button id="no-btn">Không</button>
+        <div id="plead" class="plead hidden"></div>
+    </div>
+
+    <div id="page3" class="page">
+        <div class="big-heart"></div> <!-- Thêm trái tim lớn -->
+        <div class="heart-circle">
+            <div class="heart-container">
+                <img src="Gifvsimg/hello-kitty.gif" alt="Hello Kitty with Flowers" id="kitty-final">
+                <h2>Anh cũng yêu bé lắm!</h2>
+            </div>
+        </div>
+        <div class="hearts"></div>
+        <div class="heart-rain"></div> <!-- Cơn mưa trái tim -->
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="adudiovsVideo/videoplayback.weba" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ âm thanh.
+    </audio>
+    <button id="music-toggle">Tắt nhạc</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

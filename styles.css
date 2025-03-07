@@ -1,0 +1,432 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('Gifvsimg/anh-gif.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.page {
+    display: none;
+    text-align: center;
+    color: #ff4081;
+    position: relative;
+    z-index: 10;
+}
+
+.page.active {
+    display: block;
+}
+
+#kitty,
+#kitty-final {
+    width: 250px;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+#message,
+h1,
+h2 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff80ab;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, font-size 0.3s;
+}
+
+button:hover {
+    background-color: #f06292;
+}
+
+#next-btn {
+    margin-top: 20px;
+}
+
+#yes-btn {
+    background-color: #ff4081;
+}
+
+#no-btn {
+    background-color: #bdbdbd;
+}
+
+.plead {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    color: #ff4081;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Cơn mưa trái tim (cải tiến) */
+.heart-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.heart-rain::before,
+.heart-rain::after,
+.heart-rain span:nth-child(1),
+.heart-rain span:nth-child(2),
+.heart-rain span:nth-child(3),
+.heart-rain span:nth-child(4),
+.heart-rain span:nth-child(5),
+.heart-rain span:nth-child(6),
+.heart-rain span:nth-child(7),
+.heart-rain span:nth-child(8),
+.heart-rain span:nth-child(9),
+.heart-rain span:nth-child(10),
+.heart-rain span:nth-child(11),
+.heart-rain span:nth-child(12) {
+    content: '♥';
+    position: absolute;
+    color: #e91e63;
+    /* Màu đỏ đậm hơn */
+    font-size: 30px;
+    /* Tăng kích thước */
+    animation: rain 4s linear infinite;
+    /* Tăng thời gian rơi */
+    opacity: 1;
+    /* Loại bỏ độ trong suốt để rõ hơn */
+}
+
+.heart-rain::before {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart-rain::after {
+    left: 20%;
+    animation-delay: 0.5s;
+}
+
+.heart-rain span:nth-child(1) {
+    left: 30%;
+    animation-delay: 0.2s;
+}
+
+.heart-rain span:nth-child(2) {
+    left: 40%;
+    animation-delay: 0.7s;
+}
+
+.heart-rain span:nth-child(3) {
+    left: 50%;
+    animation-delay: 1.2s;
+}
+
+.heart-rain span:nth-child(4) {
+    left: 60%;
+    animation-delay: 0.4s;
+}
+
+.heart-rain span:nth-child(5) {
+    left: 70%;
+    animation-delay: 0.9s;
+}
+
+.heart-rain span:nth-child(6) {
+    left: 80%;
+    animation-delay: 1.5s;
+}
+
+.heart-rain span:nth-child(7) {
+    left: 90%;
+    animation-delay: 0.3s;
+}
+
+.heart-rain span:nth-child(8) {
+    left: 95%;
+    animation-delay: 1.0s;
+}
+
+.heart-rain span:nth-child(9) {
+    left: 15%;
+    animation-delay: 0.6s;
+}
+
+.heart-rain span:nth-child(10) {
+    left: 25%;
+    animation-delay: 1.3s;
+}
+
+.heart-rain span:nth-child(11) {
+    left: 35%;
+    animation-delay: 0.8s;
+}
+
+.heart-rain span:nth-child(12) {
+    left: 45%;
+    animation-delay: 1.6s;
+}
+
+@keyframes rain {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0.5;
+        /* Giảm opacity khi rơi hết */
+    }
+}
+
+/* Vòng trái tim */
+.heart-circle {
+    position: relative;
+    display: inline-block;
+}
+
+.heart-container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Thêm trái tim lớn ở giữa */
+.heart-circle::before,
+.heart-circle::after,
+.heart-circle span:nth-child(1),
+.heart-circle span:nth-child(2),
+.heart-circle span:nth-child(3),
+.heart-circle span:nth-child(4),
+.heart-circle span:nth-child(5),
+.heart-circle span:nth-child(6),
+.heart-circle span:nth-child(7),
+.heart-circle span:nth-child(8),
+.heart-circle span:nth-child(9),
+.heart-circle span:nth-child(10),
+.heart-circle span:nth-child(11),
+.heart-circle span:nth-child(12),
+.heart-circle span:nth-child(13),
+.heart-circle span:nth-child(14),
+.heart-circle span:nth-child(15),
+.heart-circle span:nth-child(16) {
+    content: '♥';
+    position: absolute;
+    color: #e91e63;
+    font-size: 30px;
+    z-index: 5;
+    animation: pulse 1.5s infinite;
+}
+
+.heart-circle::before {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+}
+
+.heart-circle::after {
+    transform: rotate(22.5deg) translateX(150px) rotate(-22.5deg);
+}
+
+.heart-circle span:nth-child(1) {
+    transform: rotate(45deg) translateX(150px) rotate(-45deg);
+}
+
+.heart-circle span:nth-child(2) {
+    transform: rotate(67.5deg) translateX(150px) rotate(-67.5deg);
+}
+
+.heart-circle span:nth-child(3) {
+    transform: rotate(90deg) translateX(150px) rotate(-90deg);
+}
+
+.heart-circle span:nth-child(4) {
+    transform: rotate(112.5deg) translateX(150px) rotate(-112.5deg);
+}
+
+.heart-circle span:nth-child(5) {
+    transform: rotate(135deg) translateX(150px) rotate(-135deg);
+}
+
+.heart-circle span:nth-child(6) {
+    transform: rotate(157.5deg) translateX(150px) rotate(-157.5deg);
+}
+
+.heart-circle span:nth-child(7) {
+    transform: rotate(180deg) translateX(150px) rotate(-180deg);
+}
+
+.heart-circle span:nth-child(8) {
+    transform: rotate(202.5deg) translateX(150px) rotate(-202.5deg);
+}
+
+.heart-circle span:nth-child(9) {
+    transform: rotate(225deg) translateX(150px) rotate(-225deg);
+}
+
+.heart-circle span:nth-child(10) {
+    transform: rotate(247.5deg) translateX(150px) rotate(-247.5deg);
+}
+
+.heart-circle span:nth-child(11) {
+    transform: rotate(270deg) translateX(150px) rotate(-270deg);
+}
+
+.heart-circle span:nth-child(12) {
+    transform: rotate(292.5deg) translateX(150px) rotate(-292.5deg);
+}
+
+.heart-circle span:nth-child(13) {
+    transform: rotate(315deg) translateX(150px) rotate(-315deg);
+}
+
+.heart-circle span:nth-child(14) {
+    transform: rotate(337.5deg) translateX(150px) rotate(-337.5deg);
+}
+
+.heart-circle span:nth-child(15) {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+}
+
+.heart-circle span:nth-child(16) {
+    transform: rotate(382.5deg) translateX(150px) rotate(-382.5deg);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Thêm trái tim lớn bao quanh ảnh và thông điệp */
+.big-heart {
+    position: absolute;
+    width: 400px;
+    /* Kích thước trái tim lớn */
+    height: 350px;
+    /* Điều chỉnh để phù hợp với hình dáng trái tim */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('https://via.placeholder.com/400x350?text=♥') no-repeat center;
+    background-size: contain;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hearts::before,
+.hearts::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('Gifvsimg/heart.gif') no-repeat;
+    animation: float 3s infinite;
+}
+
+.hearts::before {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.hearts::after {
+    top: 30%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+#music-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #ff80ab;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+}
+
+#music-toggle:hover {
+    background-color: #f06292;
+}
+
+.side-gif {
+    position: fixed;
+    width: 150px;
+    animation: bounce 2s infinite;
+}
+
+#left-gif {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+#right-gif {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
