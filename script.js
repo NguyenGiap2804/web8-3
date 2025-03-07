@@ -16,8 +16,22 @@ const noBtn = document.getElementById('no-btn');
 const pleadElement = document.getElementById('plead');
 const music = document.getElementById('background-music');
 const musicToggle = document.getElementById('music-toggle');
+const heartRain = document.getElementById('heart-rain');
 
-music.play();
+// Kiểm tra và xử lý tự động phát nhạc trên điện thoại
+function playMusic() {
+    music.play().catch(() => {
+        musicToggle.style.display = 'block'; // Hiển thị nút để người dùng bật nhạc thủ công
+        musicToggle.textContent = 'Bật nhạc';
+        musicToggle.onclick = () => {
+            music.play();
+            musicToggle.style.display = 'none'; // Ẩn nút sau khi bật
+        };
+    });
+}
+
+playMusic(); // Gọi khi trang tải
+
 musicToggle.addEventListener('click', () => {
     if (music.paused) {
         music.play();
@@ -45,6 +59,7 @@ nextBtn.addEventListener('click', () => {
 yesBtn.addEventListener('click', () => {
     page2.classList.remove('active');
     page3.classList.add('active');
+    heartRain.classList.add('active'); // Kích hoạt mưa trái tim
 });
 
 noBtn.addEventListener('click', () => {
